@@ -11,8 +11,8 @@ _Week 43 - Introduction to Business Intelligence_
 
 ### Objectives
 
--   [ ] Formulate context, purpose, questions, and hypothesis for a BI experiment.
--   [ ] Search Internet for sources, related to your BI experiment.
+-   [x] Formulate context, purpose, questions, and hypothesis for a BI experiment.
+-   [x] Search Internet for sources, related to your BI experiment.
 
 [Extended Description](https://datsoftlyngby.github.io/soft2020fall/resources/d1b9dbf5-Assignment1.pdf)
 
