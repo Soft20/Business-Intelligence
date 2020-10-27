@@ -24,6 +24,8 @@ Authors
 **Rasmus Helsgaun**  
 **Stephan Djurhuus**
 
+@import "/assets/cover.png" {alt="cover image"}
+
 ## Content {ignore=true}
 
 <!-- Auto-generated Table of Content -->

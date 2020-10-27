@@ -13,6 +13,8 @@ Authors
 **Rasmus Helsgaun**  
 **Stephan Djurhuus**
   
+![cover image](/assets/cover.png?0.9869106070496156 )  
+  
 ##  Content
   
   
