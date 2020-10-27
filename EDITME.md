@@ -15,7 +15,7 @@ This document is created with the vs-code extension - Markdown Preview Enhanced
 > https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced
 -->
 
-# BI Project {ignore=true}
+# Business Intelligence Project {ignore=true}
 
 _Business Intelligence, fall 2020_
 
@@ -26,7 +26,11 @@ Authors
 
 ## Content {ignore=true}
 
+<!-- Auto-generated Table of Content -->
+
 [toc]
+
+<!-- Import Assignments here-->
 
 @import "assignments/1-foundation.md"
 

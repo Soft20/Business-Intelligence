@@ -3,7 +3,7 @@
   
   
   
-#  BI Project
+#  Business Intelligence Project
   
   
 _Business Intelligence, fall 2020_
