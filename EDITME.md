@@ -20,8 +20,8 @@ This document is created with the vs-code extension - Markdown Preview Enhanced
 _Business Intelligence, fall 2020_
 
 Authors  
-**Pernille Lørup**
-**Rasmus Helsgaun**
+**Pernille Lørup**  
+**Rasmus Helsgaun**  
 **Stephan Djurhuus**
 
 ## Content {ignore=true}

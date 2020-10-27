@@ -9,8 +9,8 @@
 _Business Intelligence, fall 2020_
   
 Authors  
-**Pernille Lørup**
-**Rasmus Helsgaun**
+**Pernille Lørup**  
+**Rasmus Helsgaun**  
 **Stephan Djurhuus**
   
 ##  Content
