@@ -56,7 +56,8 @@ _Week 43 - Introduction to Business Intelligence_
 [Data set](data/prevalence-of-depression-males-vs-females.csv)
 [Reference](https://ourworldindata.org/global-mental-health)
 ![Prevalence of depression, males vs. females, 2017](/assets/prevalence-of-depression-males-vs-females.png)
-![prevalence-of-depression-males-vs-females (1)](</assets/prevalence-of-depression-males-vs-females%20(1).png>))
+
+![prevalence-of-depression-males-vs-females (1)](/assets/prevalence-of-depression-males-vs-females_worldwide.png)
 
 ##### Percent of adults with depression in the US
 

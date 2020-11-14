@@ -13,7 +13,7 @@ Authors
 **Rasmus Helsgaun**  
 **Stephan Djurhuus**
   
-![cover image](/assets/cover.png?0.003965693714838681 )  
+![cover image](/assets/cover.png?0.45547228292849185 )  
   
 ##  Content
   
@@ -204,7 +204,8 @@ _Week 43 - Introduction to Business Intelligence_
 [Data set](/data/prevalence-of-depression-males-vs-females.csv )
 [Reference](https://ourworldindata.org/global-mental-health )
 ![Prevalence of depression, males vs. females, 2017](/assets/prevalence-of-depression-males-vs-females.png )
-![prevalence-of-depression-males-vs-females (1)](</assets/prevalence-of-depression-males-vs-females%20(> ).png>))
+  
+![prevalence-of-depression-males-vs-females (1)](/assets/prevalence-of-depression-males-vs-females_worldwide.png )
   
 #####  Percent of adults with depression in the US
   
