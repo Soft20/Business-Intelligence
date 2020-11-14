@@ -1,11 +1,11 @@
 ---
 markdown:
-    path: README.md
-    image_dir: /assets
-    ignore_from_front_matter: true
-    absolute_image_path: true
+  path: README.md
+  image_dir: /assets
+  ignore_from_front_matter: true
+  absolute_image_path: true
 export_on_save:
-    markdown: true
+  markdown: true
 ---
 
 <!-- ATTENTION
@@ -35,6 +35,8 @@ Authors
 <!-- Import Assignments here-->
 
 @import "assignments/1-foundation.md"
+
+@import "assignments/2-storytelling.md"
 
 ---
 
