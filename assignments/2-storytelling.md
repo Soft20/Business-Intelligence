@@ -11,13 +11,13 @@ _Week 43 - Introduction to Business Intelligence_
 
 ### Objectives
 
-- [ ] Search Internet and other media for relevant data sources
+- [x] Search Internet and other media for relevant data sources
 - [ ] Integrate the sources in shared repository by either ETL or ELT process (you can use Tableau Prep, own code, or other data integration tool)
 - [ ] Design business intelligence data story (can be done manually on paper, but the use of BI platform such as Tableau is recommended).
-- [ ] Decide on data processing parameters and methods
+- [x] Decide on data processing parameters and methods
 - [ ] Choose data visualisation techniques
 - [ ] Create visual representations
-- [ ] Create dashboards
+- [x] Create dashboards
 - [ ] Create a prototype of data story
 - [ ] Export your solution in a file and upload it to your git repository. Send the repository link to Peergrade.
 
