@@ -601,6 +601,9 @@
               <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:F1:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
+              <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[avg:Depression male:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
               <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Calculation_1200490823870337025:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
@@ -629,9 +632,6 @@
             </map>
             <map to='#a0cbe8'>
               <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[__tableau_internal_object_id__].[cnt:daily-hours-spent-with-digital-media-per-adult-user.csv_9CDE0CEE829945409089E8E5B95E5076:qk]&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[avg:Depression female:qk]&quot;</bucket>
             </map>
             <map to='#b07aa1'>
               <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[med:Depression female:qk]&quot;</bucket>
@@ -673,7 +673,7 @@
               <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Monthly active users (Statista and TNW (2019)):qk]&quot;</bucket>
             </map>
             <map to='#ff9da7'>
-              <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[avg:Depression male:qk]&quot;</bucket>
+              <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[avg:Depression female:qk]&quot;</bucket>
             </map>
             <map to='#ff9da7'>
               <bucket>&quot;[federated.16fsyi20u3xxfp17jg75z16rkagx].[med:Depression male:qk]&quot;</bucket>
@@ -1023,7 +1023,7 @@
       </table>
       <simple-id uuid='{B373984C-D8E6-491E-B397-C4FF356804E4}' />
     </worksheet>
-    <worksheet name='Social Media and Depression circles'>
+    <worksheet name='Social Media growth and Depression rates'>
       <table>
         <view>
           <datasources>
@@ -1052,12 +1052,21 @@
               <groupfilter function='member' level='[none:Entity:nk]' member='&quot;YouTube&quot;' />
             </groupfilter>
           </filter>
+          <filter class='quantitative' column='[federated.16fsyi20u3xxfp17jg75z16rkagx].[none:Year (users-by-social-media-platform.csv):qk]' included-values='in-range'>
+            <min>2005</min>
+            <max>2019</max>
+          </filter>
           <slices>
             <column>[federated.16fsyi20u3xxfp17jg75z16rkagx].[none:Entity:nk]</column>
+            <column>[federated.16fsyi20u3xxfp17jg75z16rkagx].[none:Year (users-by-social-media-platform.csv):qk]</column>
           </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Percent of adults with depression (%):qk]' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+        </style>
         <panes>
           <pane selection-relaxation-option='selection-relaxation-allow'>
             <view>
@@ -1089,6 +1098,79 @@
         <cols />
       </table>
       <simple-id uuid='{17553FFE-BABD-440F-A160-AF0FC9F76C44}' />
+    </worksheet>
+    <worksheet name='Summarized Social Media usage vs Depression rates'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='percent_of_adults_with_depression_usafacts+' name='federated.16fsyi20u3xxfp17jg75z16rkagx' />
+          </datasources>
+          <datasource-dependencies datasource='federated.16fsyi20u3xxfp17jg75z16rkagx'>
+            <column datatype='integer' name='[Monthly active users (Statista and TNW (2019))]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Percent of adults with depression (%)]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Year (users-by-social-media-platform.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[Year (users-by-social-media-platform.csv)]' derivation='None' name='[none:Year (users-by-social-media-platform.csv):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Year (users-by-social-media-platform.csv)]' derivation='None' name='[none:Year (users-by-social-media-platform.csv):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Monthly active users (Statista and TNW (2019))]' derivation='Sum' name='[sum:Monthly active users (Statista and TNW (2019)):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Percent of adults with depression (%)]' derivation='Sum' name='[sum:Percent of adults with depression (%):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.16fsyi20u3xxfp17jg75z16rkagx].[none:Year (users-by-social-media-platform.csv):ok]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Year (users-by-social-media-platform.csv):ok]' />
+              <groupfilter function='member' level='[none:Year (users-by-social-media-platform.csv):ok]' member='2019' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.16fsyi20u3xxfp17jg75z16rkagx].[none:Year (users-by-social-media-platform.csv):ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Percent of adults with depression (%):qk]' field-type='quantitative' max='0.21058604651162793' min='0.16' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Monthly active users (Statista and TNW (2019)):qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Percent of adults with depression (%):qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Monthly active users (Statista and TNW (2019)):qk] + [federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Percent of adults with depression (%):qk])</rows>
+        <cols>[federated.16fsyi20u3xxfp17jg75z16rkagx].[none:Year (users-by-social-media-platform.csv):qk]</cols>
+      </table>
+      <simple-id uuid='{0CD147F6-FFDD-4D6B-A0FC-DA7428B9CCC8}' />
     </worksheet>
   </worksheets>
   <dashboards>
@@ -1360,7 +1442,7 @@
         <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
           <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='7' param='horz' w='98400' x='800' y='1000'>
             <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='5' w='82400' x='800' y='1000'>
-              <zone h='98000' id='3' name='Social Media and Depression circles' w='82400' x='800' y='1000'>
+              <zone h='98000' id='3' name='Social Media growth and Depression rates' w='82400' x='800' y='1000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1370,7 +1452,7 @@
               </zone>
             </zone>
             <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='160' h='98000' id='6' is-fixed='true' param='vert' w='16000' x='83200' y='1000'>
-              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='8' name='Social Media and Depression circles' pane-specification-id='0' param='[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Percent of adults with depression (%):qk]' w='16000' x='83200' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='8' name='Social Media growth and Depression rates' pane-specification-id='0' param='[federated.16fsyi20u3xxfp17jg75z16rkagx].[sum:Percent of adults with depression (%):qk]' w='16000' x='83200' y='1000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1425,7 +1507,7 @@
               <flipboard active-id='9' nav-type='caption' show-nav-arrows='true'>
                 <story-points>
                   <story-point caption='Social Media usage vs adult depression' captured-sheet='Social Media and Depression' id='2' />
-                  <story-point caption='Depression color visualisation' captured-sheet='Dashboard 4' id='9' />
+                  <story-point caption='Social Media growth and Depression rates' captured-sheet='Dashboard 4' id='9' />
                   <story-point caption='Number with anorexia and bulimia nervosa, World, 1990 to 2017' captured-sheet='Eating disorders' id='3' />
                   <story-point caption='Daily hours spent with digital media, United States, 2008 to 2018' captured-sheet='Daily Social Media usage' id='4' />
                   <story-point caption='Prevalence of depression, males vs. females, 2017' captured-sheet='Dashboard 3' id='8' />
@@ -1475,7 +1557,7 @@
       </cards>
       <simple-id uuid='{D291A4CD-8ABD-440D-AD9C-705DF27AD1B5}' />
     </window>
-    <window class='worksheet' name='Social Media and Depression circles'>
+    <window class='worksheet' maximized='true' name='Social Media growth and Depression rates'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1502,6 +1584,29 @@
         </edge>
       </cards>
       <simple-id uuid='{6066F5F7-C495-447E-B78C-9303938EF88D}' />
+    </window>
+    <window class='worksheet' name='Summarized Social Media usage vs Depression rates'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{79EAD0F9-0530-4A30-B465-8B9697674002}' />
     </window>
     <window class='worksheet' name='Eating disorders'>
       <cards>
@@ -1619,7 +1724,7 @@
     </window>
     <window class='dashboard' name='Dashboard 4'>
       <viewpoints>
-        <viewpoint name='Social Media and Depression circles' />
+        <viewpoint name='Social Media growth and Depression rates' />
       </viewpoints>
       <active id='-1' />
       <simple-id uuid='{A6429074-601F-4337-8226-87B68B32C21F}' />
@@ -1629,9 +1734,9 @@
       <active id='3' />
       <simple-id uuid='{9024B105-6AB9-4BF0-A698-301D7EF94C21}' />
     </window>
-    <window class='dashboard' maximized='true' name='Story 1'>
+    <window class='dashboard' name='Story 1'>
       <viewpoints />
-      <active id='4' />
+      <active id='-1' />
       <simple-id uuid='{0B2A12DA-CD3A-40D2-B854-5ACEC6CF2B62}' />
     </window>
   </windows>
