@@ -12,7 +12,9 @@ Authors
 **Pernille Lørup**  
 **Rasmus Helsgaun**  
 **Stephan Djurhuus**
-  
+ 
+[Assignment 4: Immersive Analytics and Visualisation](https://github.com/Soft20/Business-Intelligence/wiki/Immersive-Analytics-and-Visualisation)
+ 
 ![cover image](/assets/cover.png?0.08484650844391028 )  
   
 ##  Content
