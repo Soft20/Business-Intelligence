@@ -12,6 +12,8 @@ Pernille Lørup
 
 ...
 
+> Remember to run the [python server](flask-server)
+
 ### Assignments
 
 1. [Foundation](https://github.com/Soft20/Business-Intelligence/wiki/Foundation)
