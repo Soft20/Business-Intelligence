@@ -43,26 +43,14 @@ def SuggestHelp(Age, Gender, self_employed, family_history, remote_work, tech_co
     care_options = 1 if care_options else 0
     wellness_program = 1 if wellness_program else 0
 
-    X = np.column_stack([Age, Gender, self_employed, family_history, remote_work, tech_company, benefits, care_options, wellness_program]).astype('int32')
+    X = np.column_stack([Age, Gender, self_employed, family_history, remote_work,
+                         tech_company, benefits, care_options, wellness_program]).astype('int32')
 
     prediction = model.predict(X)[0]
     print('prediction::', prediction)
 
-    return 'You got the stress' if round(prediction) == 1 else 'no worries, be happy'
+    return 'You\'ve got the probability of developing stress. Take care of yourself.' if round(prediction) == 1 else 'No worries, be happy'
 
 
 if __name__ == '__main__':
     app.run(port=5000)
-
-
-'''
-Age,
-Gender
-, self_employed
-, family_history
-, remote_work
-, tech_company
-, benefits
-, care_options
-, wellness_program):
-'''
