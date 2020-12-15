@@ -21,6 +21,5 @@ As a result of our project we found a connection between the growth of social me
 2. [Business Data Storytelling](https://github.com/Soft20/Business-Intelligence/wiki/Storytelling)
 3. [Integrating AI](https://github.com/Soft20/Business-Intelligence/wiki/Integrating-AI)
 4. [Immersive Analytics and Visualisation](https://github.com/Soft20/Business-Intelligence/wiki/Immersive-Analytics-and-Visualisation)
-5. [Exam Project](https://github.com/Soft20/Business-Intelligence/wiki/Exam-Project)
 
 [Wiki Home](https://github.com/Soft20/Business-Intelligence/wiki)
