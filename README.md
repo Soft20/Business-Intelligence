@@ -4,7 +4,7 @@ _Business Intelligence Project_
 
 ### Group members
 
-Rasmus Hellsgaun  
+Rasmus Helsgaun  
 Stephan Djurhuus  
 Pernille Lørup
 
